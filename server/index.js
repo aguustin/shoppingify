@@ -4,6 +4,7 @@ import morgan from "morgan";
 import { PORT } from "./config.js";
 import { connectionDb } from "./db.js";
 import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productsRoutes.js";
 
 const app = express();
 connectionDb();
@@ -24,6 +25,7 @@ app.use(morgan('tiny'));
 //routes
 
 app.use(userRoutes);
+app.use(productRoutes);
 
 //listen
 app.listen(PORT);

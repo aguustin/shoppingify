@@ -1,13 +1,9 @@
 import users from "../models/users.js";
 
 export const LoginUser = async (req, res) => {
-
     const email = req.body.email;
-
     const password = req.body.password;
-
     const findUser = await users.find({email: email, password: password});
-
     if(findUser){
         res.send(findUser);
     }else{
